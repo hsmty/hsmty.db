@@ -14,12 +14,3 @@ DB.create_table :roles do
 end
 
 DB.create_join_table(:user_id=>:users, :role_id=>:roles)
-    
-DB.create_table :happenings do
-    primary_key :id
-    String      :name
-    DateTime    :date
-    Numeric     :cost
-    DateTime    :created
-    foreign_key :created_by, :users
-end

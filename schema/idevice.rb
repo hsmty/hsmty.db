@@ -1,6 +1,6 @@
 
 DB.create_table :idevices do
-    String      :id, :primary_key => true
+    String      :uuid, :primary_key => true
     String      :token, :unique => true, :null => false
     String      :secret, :null => false
     String      :version, :null => false, :default => 0

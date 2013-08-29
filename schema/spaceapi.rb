@@ -22,7 +22,7 @@ DB.create_table :events  do
     String      :type
     DateTime    :time
     String      :extra
-    foreign_key  :created_by, :user
+    foreign_key  :created_by, :users
 end
 
 DB.create_table :projects do
@@ -30,7 +30,7 @@ DB.create_table :projects do
     String      :name
     String      :url
     DateTime    :created
-    foreign_key :created_by, :user
+    foreign_key :created_by, :users
 end
 
 DB.create_table :feed_classes do
@@ -49,5 +49,5 @@ DB.create_table :feeds do
     DateTime    :created
     foreign_key :type_id, :feed_types
     foreign_key :class_id, :feed_classes
-    foreign_key :created_by, :user
+    foreign_key :created_by, :users
 end

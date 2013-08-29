@@ -1,14 +1,15 @@
 
 DB.create_table :idevices do
-    String      :uuid, :primary_key => true
+    primary_key :id
     String      :token, :unique => true, :null => false
     String      :secret, :null => false
     String      :version, :null => false, :default => 0
 end
 
 DB.create_table :spaces do
-    String      :name, :primary_key => true
-    String      :url, :unique => true
+    primary_key :id
+    String      :name, :null => false
+    String      :uri, :unique => true
 end
 
 DB.create_table :space_status do
@@ -19,4 +20,4 @@ DB.create_table :space_status do
     index       :created
 end
 
-DB.create_join_table(:idevice_id => :idevices, :space_id => :spaces)
+DB.create_join_table(:idevice => :idevices, :space => :spaces)

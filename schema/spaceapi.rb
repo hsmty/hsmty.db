@@ -10,6 +10,7 @@ end
 DB.create_table :happenings  do
     primary_key :id
     String      :name
+    String      :desc
     DateTime    :time
     Numeric     :cost
     DateTime    :created
